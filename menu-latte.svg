@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="120 80 560 420">
+  <!-- 仮のメニュー画像（写真風）：グラスのハニーカフェラテとハニーディッパー。
+       実際の写真に差し替える前提のダミーです（推奨 1200×900px / 4:3） -->
+  <defs>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="2" seed="8"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.13"/></feComponentTransfer>
+    </filter>
+    <!-- ミルクフォームの細かい泡 -->
+    <filter id="foam" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="2"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+    </filter>
+    <filter id="b24" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="24"/></filter>
+    <filter id="b8" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="b3" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="b1" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1"/></filter>
+
+    <radialGradient id="spot" cx="0.48" cy="0.28" r="0.7">
+      <stop offset="0" stop-color="#5f5a53"/>
+      <stop offset="0.45" stop-color="#2a2725"/>
+      <stop offset="1" stop-color="#111"/>
+    </radialGradient>
+    <linearGradient id="table" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#232220"/>
+      <stop offset="1" stop-color="#0d0d0d"/>
+    </linearGradient>
+    <radialGradient id="pool" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8f8a80" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#8f8a80" stop-opacity="0"/>
+    </radialGradient>
+    <!-- ラテの層（上：ミルク → 下：エスプレッソ） -->
+    <linearGradient id="latte" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#efdfc4"/>
+      <stop offset="0.3" stop-color="#d9b88c"/>
+      <stop offset="0.7" stop-color="#b07b45"/>
+      <stop offset="1" stop-color="#7c4c24"/>
+    </linearGradient>
+    <linearGradient id="latteSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#000" stop-opacity="0.25"/>
+      <stop offset="0.3" stop-color="#fff" stop-opacity="0.12"/>
+      <stop offset="0.7" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="honey" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6c45a"/>
+      <stop offset="0.6" stop-color="#d98f22"/>
+      <stop offset="1" stop-color="#9c5a10"/>
+    </linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c9955e"/>
+      <stop offset="1" stop-color="#7d5130"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.45" r="0.75">
+      <stop offset="0.55" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.6"/>
+    </radialGradient>
+    <clipPath id="glassIn">
+      <path d="M334 128 L466 128 L456 466 Q400 474 344 466 Z"/>
+    </clipPath>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#spot)"/>
+  <g filter="url(#b24)" opacity="0.45">
+    <circle cx="660" cy="120" r="24" fill="#d8cfbf"/>
+    <circle cx="140" cy="90" r="18" fill="#d8cfbf" opacity="0.7"/>
+  </g>
+
+  <!-- スレートのテーブル -->
+  <rect x="0" y="380" width="800" height="220" fill="url(#table)"/>
+  <rect x="0" y="380" width="800" height="220" filter="url(#grain)"/>
+  <rect x="0" y="380" width="800" height="1.5" fill="#6d6a65" opacity="0.6"/>
+  <ellipse cx="400" cy="480" rx="320" ry="100" fill="url(#pool)"/>
+
+  <!-- グラスの影と、ラテを透過した光 -->
+  <ellipse cx="420" cy="482" rx="92" ry="16" fill="#000" opacity="0.6" filter="url(#b8)"/>
+  <ellipse cx="455" cy="498" rx="90" ry="14" fill="#c98a3c" opacity="0.25" filter="url(#b8)"/>
+
+  <!-- グラスの中身 -->
+  <g clip-path="url(#glassIn)">
+    <rect x="320" y="128" width="160" height="350" fill="#ffffff" opacity="0.05"/>
+    <!-- ラテ -->
+    <rect x="320" y="214" width="160" height="260" fill="url(#latte)"/>
+    <!-- フォーム -->
+    <rect x="320" y="176" width="160" height="42" fill="#f8f3ea"/>
+    <rect x="320" y="176" width="160" height="42" filter="url(#foam)"/>
+    <rect x="320" y="212" width="160" height="10" fill="#e9d6b5" opacity="0.8" filter="url(#b3)"/>
+    <rect x="320" y="128" width="160" height="350" fill="url(#latteSide)"/>
+  </g>
+  <!-- フォーム上面とはちみつ -->
+  <ellipse cx="400" cy="177" rx="64" ry="9" fill="#fcf9f3"/>
+  <path d="M362 176 q14 -6 26 0 t26 0 t24 -1" fill="none" stroke="url(#honey)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M398 177 q-2 14 0 30" fill="none" stroke="#e7a23a" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- グラス（輪郭・反射） -->
+  <path d="M334 128 L466 128 L456 466 Q400 474 344 466 Z" fill="none" stroke="#fff" stroke-opacity="0.35" stroke-width="2"/>
+  <ellipse cx="400" cy="128" rx="66" ry="10" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="2"/>
+  <rect x="346" y="140" width="9" height="310" rx="4" fill="#fff" opacity="0.55" filter="url(#b3)"/>
+  <rect x="444" y="150" width="4" height="280" rx="2" fill="#fff" opacity="0.25" filter="url(#b1)"/>
+  <!-- 厚いグラスの底 -->
+  <path d="M344 452 Q400 460 456 452 L456 466 Q400 474 344 466 Z" fill="#fff" opacity="0.14"/>
+
+  <!-- ハニーディッパー -->
+  <g filter="url(#b1)">
+    <ellipse cx="600" cy="476" rx="60" ry="9" fill="#000" opacity="0.5" filter="url(#b8)"/>
+    <path d="M520 452 L660 432" stroke="url(#wood)" stroke-width="9" stroke-linecap="round"/>
+    <g transform="rotate(-8 520 456)">
+      <rect x="486" y="438" width="54" height="36" rx="10" fill="url(#honey)"/>
+      <path d="M494 438 v36 M506 438 v36 M518 438 v36 M530 438 v36" stroke="#8a4f0d" stroke-width="2" opacity="0.5"/>
+      <rect x="492" y="442" width="40" height="5" rx="2.5" fill="#fff4cf" opacity="0.6"/>
+    </g>
+    <ellipse cx="506" cy="482" rx="22" ry="5" fill="#d98f22" opacity="0.85"/>
+    <ellipse cx="500" cy="480" rx="8" ry="1.6" fill="#ffe7a8" opacity="0.8"/>
+  </g>
+
+  <rect width="800" height="600" fill="url(#vignette)"/>
+</svg>
