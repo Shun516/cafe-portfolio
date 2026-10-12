@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="110 120 600 450">
+  <!-- 仮のメニュー画像（写真風）：黒いプレートの季節のフルーツタルト。
+       実際の写真に差し替える前提のダミーです（推奨 1200×900px / 4:3） -->
+  <defs>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="2" seed="12"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.13"/></feComponentTransfer>
+    </filter>
+    <!-- タルト生地のざらつき -->
+    <filter id="crumb" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" seed="6"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.35  0 0 0 0 0.2  0 0 0 0 0.08  0 0 0 0.35 0"/>
+      <!-- ざらつきを生地の形の内側だけに限定 -->
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <filter id="b24" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="24"/></filter>
+    <filter id="b8" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="b2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2"/></filter>
+    <filter id="b1" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="0.8"/></filter>
+
+    <radialGradient id="spot" cx="0.5" cy="0.3" r="0.7">
+      <stop offset="0" stop-color="#5e5a55"/>
+      <stop offset="0.45" stop-color="#2a2826"/>
+      <stop offset="1" stop-color="#111"/>
+    </radialGradient>
+    <linearGradient id="table" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#232220"/>
+      <stop offset="1" stop-color="#0d0d0d"/>
+    </linearGradient>
+    <radialGradient id="pool" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8f8a80" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#8f8a80" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="plate" cx="0.45" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#2f2f2f"/>
+      <stop offset="1" stop-color="#121212"/>
+    </radialGradient>
+    <linearGradient id="crustSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8a4f1f"/>
+      <stop offset="0.3" stop-color="#d79d5a"/>
+      <stop offset="0.55" stop-color="#e7b673"/>
+      <stop offset="1" stop-color="#7a4419"/>
+    </linearGradient>
+    <radialGradient id="crustTop" cx="0.45" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#eac288"/>
+      <stop offset="1" stop-color="#b9783a"/>
+    </radialGradient>
+    <radialGradient id="cream" cx="0.45" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#fbf1da"/>
+      <stop offset="1" stop-color="#e6cf9f"/>
+    </radialGradient>
+    <radialGradient id="straw" cx="0.35" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#ff6b5e"/>
+      <stop offset="0.5" stop-color="#d9242c"/>
+      <stop offset="1" stop-color="#8d0f19"/>
+    </radialGradient>
+    <radialGradient id="blue" cx="0.35" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#7d8cc4"/>
+      <stop offset="0.5" stop-color="#36427a"/>
+      <stop offset="1" stop-color="#171c3a"/>
+    </radialGradient>
+    <radialGradient id="rasp" cx="0.35" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#ff7a95"/>
+      <stop offset="0.6" stop-color="#c41f4b"/>
+      <stop offset="1" stop-color="#7b0c2a"/>
+    </radialGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5d5d5d"/>
+      <stop offset="0.4" stop-color="#f2f2f2"/>
+      <stop offset="0.7" stop-color="#9c9c9c"/>
+      <stop offset="1" stop-color="#4a4a4a"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.45" r="0.75">
+      <stop offset="0.55" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.6"/>
+    </radialGradient>
+
+    <!-- 果物のパーツ -->
+    <g id="strawberry">
+      <path d="M0 -26 C 22 -26, 30 -6, 22 10 C 14 24, 4 30, 0 32 C -4 30, -14 24, -22 10 C -30 -6, -22 -26, 0 -26 Z" fill="url(#straw)"/>
+      <path d="M0 -18 C 10 -16, 12 0, 0 20 C -12 0, -10 -16, 0 -18 Z" fill="#ffd0c4" opacity="0.55"/>
+      <g fill="#ffe08a" opacity="0.85">
+        <circle cx="-14" cy="-6" r="1.6"/><circle cx="14" cy="-4" r="1.6"/><circle cx="-10" cy="10" r="1.6"/>
+        <circle cx="10" cy="12" r="1.6"/><circle cx="-16" cy="2" r="1.4"/><circle cx="17" cy="4" r="1.4"/>
+      </g>
+      <ellipse cx="-9" cy="-14" rx="6" ry="3" fill="#fff" opacity="0.7" filter="url(#b1)"/>
+    </g>
+    <g id="blueberry">
+      <circle r="11" fill="url(#blue)"/>
+      <circle cx="-3" cy="-4" r="3" fill="#dfe6ff" opacity="0.55" filter="url(#b1)"/>
+      <path d="M-2 -10 l2 3 l2 -3" stroke="#10132a" stroke-width="1.5" fill="none"/>
+    </g>
+    <g id="raspberry">
+      <circle cx="-6" cy="-5" r="7" fill="url(#rasp)"/><circle cx="6" cy="-5" r="7" fill="url(#rasp)"/>
+      <circle cx="0" cy="5" r="7" fill="url(#rasp)"/><circle cx="-8" cy="6" r="6" fill="url(#rasp)"/>
+      <circle cx="8" cy="6" r="6" fill="url(#rasp)"/><circle cx="0" cy="-10" r="6" fill="url(#rasp)"/>
+      <circle cx="-4" cy="-8" r="2" fill="#fff" opacity="0.6"/>
+    </g>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#spot)"/>
+  <g filter="url(#b24)" opacity="0.45">
+    <circle cx="110" cy="100" r="22" fill="#d8cfbf"/>
+    <circle cx="700" cy="130" r="18" fill="#d8cfbf" opacity="0.7"/>
+  </g>
+
+  <!-- スレートのテーブル -->
+  <rect x="0" y="350" width="800" height="250" fill="url(#table)"/>
+  <rect x="0" y="350" width="800" height="250" filter="url(#grain)"/>
+  <rect x="0" y="350" width="800" height="1.5" fill="#6d6a65" opacity="0.6"/>
+  <ellipse cx="400" cy="460" rx="350" ry="120" fill="url(#pool)"/>
+
+  <!-- 黒いプレート -->
+  <ellipse cx="412" cy="474" rx="282" ry="78" fill="#000" opacity="0.6" filter="url(#b24)"/>
+  <ellipse cx="400" cy="450" rx="272" ry="80" fill="url(#plate)"/>
+  <ellipse cx="400" cy="450" rx="271" ry="79" fill="none" stroke="#7a7a78" stroke-opacity="0.55" stroke-width="1.5"/>
+  <ellipse cx="400" cy="446" rx="214" ry="58" fill="#171717"/>
+
+  <!-- フォーク -->
+  <g filter="url(#b1)">
+    <path d="M590 470 L700 440" stroke="url(#steel)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M560 480 L592 470 M556 474 L590 464 M562 486 L594 476" stroke="url(#steel)" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- タルトの影 -->
+  <ellipse cx="410" cy="440" rx="176" ry="34" fill="#000" opacity="0.55" filter="url(#b8)"/>
+
+  <!-- タルト生地（側面：波形の縁） -->
+  <path d="M232 352 L238 398 A162 44 0 0 0 562 398 L568 352 A168 48 0 0 1 232 352 Z" fill="url(#crustSide)"/>
+  <path d="M232 352 L238 398 A162 44 0 0 0 562 398 L568 352 A168 48 0 0 1 232 352 Z" filter="url(#crumb)"/>
+  <g stroke="#6b3912" stroke-opacity="0.28" stroke-width="3">
+    <path d="M260 372 v34 M290 380 v34 M322 385 v34 M356 388 v34 M390 389 v34 M424 389 v34 M458 387 v34 M492 383 v34 M524 377 v34 M552 368 v32"/>
+  </g>
+  <!-- 生地の上面とクリーム -->
+  <ellipse cx="400" cy="352" rx="168" ry="48" fill="url(#crustTop)"/>
+  <ellipse cx="400" cy="352" rx="168" ry="48" filter="url(#crumb)" opacity="0.6"/>
+  <ellipse cx="400" cy="350" rx="148" ry="40" fill="url(#cream)"/>
+
+  <!-- フルーツ -->
+  <use href="#raspberry" x="300" y="352"/>
+  <use href="#strawberry" x="340" y="328" transform="rotate(-20 340 328)"/>
+  <use href="#blueberry" x="376" y="356"/>
+  <use href="#strawberry" x="410" y="320" transform="rotate(8 410 320)"/>
+  <use href="#blueberry" x="448" y="350"/>
+  <use href="#strawberry" x="480" y="330" transform="rotate(24 480 330)"/>
+  <use href="#raspberry" x="512" y="356"/>
+  <use href="#blueberry" x="356" y="372"/>
+  <use href="#raspberry" x="420" y="372"/>
+  <use href="#blueberry" x="470" y="374"/>
+  <use href="#blueberry" x="320" y="330"/>
+  <use href="#blueberry" x="530" y="334"/>
+
+  <!-- ミントの葉 -->
+  <g transform="translate(398 296) rotate(-25)">
+    <path d="M0 0 C 10 -14, 30 -14, 36 0 C 30 12, 10 12, 0 0 Z" fill="#4f8a3c"/>
+    <path d="M0 0 C 12 -1, 24 -1, 34 0" stroke="#2f5a24" stroke-width="1.5" fill="none"/>
+    <ellipse cx="16" cy="-5" rx="8" ry="2" fill="#d6f2b8" opacity="0.5" filter="url(#b1)"/>
+  </g>
+
+  <!-- ナパージュ（つや）の照り返し -->
+  <ellipse cx="380" cy="324" rx="90" ry="10" fill="#fff" opacity="0.12" filter="url(#b2)"/>
+
+  <rect width="800" height="600" fill="url(#vignette)"/>
+</svg>

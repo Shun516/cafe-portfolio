@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="110 115 580 435">
+  <!-- 仮のメニュー画像（写真風）：スレートの上のブレンドコーヒー。
+       実際の写真に差し替える前提のダミーです（推奨 1200×900px / 4:3） -->
+  <defs>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="2" seed="4"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.13"/></feComponentTransfer>
+    </filter>
+    <filter id="b24" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="24"/></filter>
+    <filter id="b8" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="b3" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="b1" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.2"/></filter>
+
+    <!-- 上からのスポットライト -->
+    <radialGradient id="spot" cx="0.5" cy="0.3" r="0.7">
+      <stop offset="0" stop-color="#5e5a55"/>
+      <stop offset="0.45" stop-color="#2a2826"/>
+      <stop offset="1" stop-color="#111"/>
+    </radialGradient>
+    <linearGradient id="table" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#232220"/>
+      <stop offset="1" stop-color="#0d0d0d"/>
+    </linearGradient>
+    <radialGradient id="pool" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8f8a80" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#8f8a80" stop-opacity="0"/>
+    </radialGradient>
+    <!-- 白い磁器 -->
+    <radialGradient id="saucer" cx="0.42" cy="0.3" r="0.75">
+      <stop offset="0" stop-color="#fdfcfa"/>
+      <stop offset="0.6" stop-color="#e6e2db"/>
+      <stop offset="1" stop-color="#9f9a92"/>
+    </radialGradient>
+    <radialGradient id="well" cx="0.45" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#f3f0eb"/>
+      <stop offset="1" stop-color="#c9c4bb"/>
+    </radialGradient>
+    <linearGradient id="cup" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8c877f"/>
+      <stop offset="0.16" stop-color="#d6d2cb"/>
+      <stop offset="0.32" stop-color="#fdfcfa"/>
+      <stop offset="0.52" stop-color="#f1eee9"/>
+      <stop offset="0.8" stop-color="#cbc6be"/>
+      <stop offset="1" stop-color="#857f77"/>
+    </linearGradient>
+    <linearGradient id="cupShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.5" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.28"/>
+    </linearGradient>
+    <!-- コーヒーの液面 -->
+    <radialGradient id="coffee" cx="0.4" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#4f2c16"/>
+      <stop offset="0.55" stop-color="#2c170a"/>
+      <stop offset="1" stop-color="#170b04"/>
+    </radialGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5d5d5d"/>
+      <stop offset="0.4" stop-color="#f2f2f2"/>
+      <stop offset="0.7" stop-color="#9c9c9c"/>
+      <stop offset="1" stop-color="#4a4a4a"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.45" r="0.75">
+      <stop offset="0.55" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.6"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 背景（ぼけた壁と照明） -->
+  <rect width="800" height="600" fill="url(#spot)"/>
+  <g filter="url(#b24)" opacity="0.5">
+    <circle cx="120" cy="110" r="26" fill="#d8cfbf"/>
+    <circle cx="690" cy="80" r="20" fill="#d8cfbf" opacity="0.7"/>
+  </g>
+
+  <!-- スレートのテーブル -->
+  <rect x="0" y="360" width="800" height="240" fill="url(#table)"/>
+  <rect x="0" y="360" width="800" height="240" filter="url(#grain)"/>
+  <rect x="0" y="360" width="800" height="1.5" fill="#6d6a65" opacity="0.6"/>
+  <ellipse cx="400" cy="470" rx="340" ry="110" fill="url(#pool)"/>
+
+  <!-- ソーサー -->
+  <ellipse cx="412" cy="482" rx="232" ry="50" fill="#000" opacity="0.55" filter="url(#b24)"/>
+  <ellipse cx="400" cy="462" rx="222" ry="56" fill="url(#saucer)"/>
+  <ellipse cx="400" cy="462" rx="221" ry="55" fill="none" stroke="#fff" stroke-opacity="0.45" stroke-width="1.5"/>
+  <ellipse cx="400" cy="456" rx="150" ry="35" fill="url(#well)"/>
+
+  <!-- スプーン -->
+  <g filter="url(#b1)">
+    <path d="M540 474 L640 440" stroke="url(#steel)" stroke-width="9" stroke-linecap="round"/>
+    <ellipse cx="520" cy="482" rx="26" ry="10" transform="rotate(-18 520 482)" fill="url(#steel)"/>
+  </g>
+
+  <!-- カップの影 -->
+  <ellipse cx="414" cy="452" rx="118" ry="22" fill="#000" opacity="0.35" filter="url(#b8)"/>
+
+  <!-- 取っ手 -->
+  <path d="M512 306 C 592 300, 602 396, 506 408" fill="none" stroke="#cfcac2" stroke-width="26" stroke-linecap="round"/>
+  <path d="M516 312 C 578 310, 584 386, 510 398" fill="none" stroke="#f8f6f2" stroke-width="7" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- カップ本体 -->
+  <path d="M282 292 L518 292 C 516 360, 500 420, 452 446 Q400 462 348 446 C 300 420, 284 360, 282 292 Z" fill="url(#cup)"/>
+  <path d="M282 292 L518 292 C 516 360, 500 420, 452 446 Q400 462 348 446 C 300 420, 284 360, 282 292 Z" fill="url(#cupShade)"/>
+  <rect x="320" y="306" width="16" height="112" rx="8" fill="#fff" opacity="0.8" filter="url(#b3)"/>
+  <rect x="474" y="310" width="6" height="80" rx="3" fill="#fff" opacity="0.3" filter="url(#b3)"/>
+
+  <!-- 縁と液面 -->
+  <ellipse cx="400" cy="292" rx="118" ry="26" fill="#f8f6f2" stroke="#c8c3bb" stroke-width="1.5"/>
+  <ellipse cx="400" cy="294" rx="104" ry="20" fill="url(#coffee)"/>
+  <ellipse cx="400" cy="294" rx="103" ry="19.5" fill="none" stroke="#7a4a26" stroke-width="2" opacity="0.6"/>
+  <ellipse cx="370" cy="288" rx="40" ry="6" fill="#fff" opacity="0.35" filter="url(#b1)"/>
+
+  <!-- 湯気 -->
+  <g fill="none" stroke="#f3eee5" stroke-width="7" stroke-linecap="round" opacity="0.12" filter="url(#b8)">
+    <path d="M378 270 q26 -50 0 -100 q-26 -50 0 -100"/>
+    <path d="M428 266 q24 -44 0 -88 q-24 -44 0 -88"/>
+  </g>
+
+  <rect width="800" height="600" fill="url(#vignette)"/>
+</svg>

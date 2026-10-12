@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450">
+  <!-- 仮の店内画像：コンクリートの壁、スモークガラスの大窓、金属のカウンター -->
+  <defs>
+    <filter id="concrete" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="3" seed="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+    </filter>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3b3a38"/>
+      <stop offset="1" stop-color="#262625"/>
+    </linearGradient>
+    <linearGradient id="window" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8d8f90"/>
+      <stop offset="1" stop-color="#3a3c3e"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2c2d2e"/>
+      <stop offset="0.5" stop-color="#5b5d5f"/>
+      <stop offset="1" stop-color="#2a2b2c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="450" fill="url(#wall)"/>
+  <rect width="600" height="450" filter="url(#concrete)"/>
+  <path d="M0 150 H600 M300 0 V310" stroke="#1d1d1d" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- 大窓（スモークガラス）と差し込む光 -->
+  <rect x="40" y="40" width="210" height="270" fill="url(#window)" opacity="0.8"/>
+  <path d="M145 40 V310 M40 175 H250" stroke="#0c0c0c" stroke-width="5"/>
+  <rect x="40" y="40" width="210" height="270" fill="none" stroke="#0c0c0c" stroke-width="7"/>
+  <polygon points="60,310 250,310 400,450 110,450" fill="#e9e5dc" opacity="0.08"/>
+
+  <!-- 床 -->
+  <rect x="0" y="330" width="600" height="120" fill="#1b1b1b"/>
+  <rect x="0" y="330" width="600" height="2" fill="#4a4a48"/>
+
+  <!-- ステンレスのカウンター -->
+  <rect x="320" y="250" width="250" height="80" fill="#151515"/>
+  <rect x="320" y="244" width="250" height="8" fill="url(#steel)"/>
+
+  <!-- 黒い金属のスツール -->
+  <g stroke="#0e0e0e" stroke-width="4">
+    <path d="M360 300 V380 M390 300 V380 M355 300 H395"/>
+    <path d="M460 300 V380 M490 300 V380 M455 300 H495"/>
+  </g>
+
+  <!-- 間接照明のライン -->
+  <rect x="300" y="0" width="300" height="3" fill="#efe9dc" opacity="0.8"/>
+  <ellipse cx="450" cy="10" rx="160" ry="40" fill="#efe9dc" opacity="0.12" filter="url(#blur)"/>
+
+  <!-- ペンダントライト -->
+  <path d="M445 0 V140" stroke="#0e0e0e" stroke-width="2"/>
+  <path d="M425 140 H465 L460 160 H430 Z" fill="#101010"/>
+  <ellipse cx="445" cy="190" rx="60" ry="30" fill="#efe9dc" opacity="0.1" filter="url(#blur)"/>
+</svg>
